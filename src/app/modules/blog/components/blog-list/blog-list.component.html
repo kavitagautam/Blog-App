@@ -1,0 +1,33 @@
+<div class="blog-list-wrapper">
+  <div class="container">
+    <div class="row">
+      <h3 class="title">Blogs</h3>
+      <div *ngFor="let article of articles | async">
+        <div class="col-lg-6">
+          <div class="blog-wrapper">
+            <div class="blog-content">
+              {{ article.content }}
+            </div>
+            <div class="comment-wrapper">
+              <form [formGroup]="commentForm">
+                <textarea
+                  formControlName="comment"
+                  name=""
+                  id=""
+                  rows="1"
+                ></textarea>
+                <button
+                  class="btn btn-success comment-btn"
+                  type="submit"
+                  (click)="onComment()"
+                >
+                  Comment
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

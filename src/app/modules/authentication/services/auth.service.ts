@@ -9,9 +9,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 export class AuthService {
 
-  constructor(
-    public afAuth: AngularFireAuth, // Inject Firebase auth service
-  ) { }
+  constructor(public afAuth: AngularFireAuth) { }
 
   // Sign in with Google
   GoogleAuth() {
@@ -19,13 +17,13 @@ export class AuthService {
   }  
 
   // Auth logic to run auth providers
-  AuthLogin(provider:any) {
-    // return this.afAuth.auth.signInWithPopup(provider)
-    // .then((result:any) => {
-    //     console.log('You have been successfully logged in!')
-    // }).catch((error:any) => {
-    //     console.log(error)
-    // })
-  }
+  // AuthLogin(provider:any) {
+  //   return this.afAuth.auth.signInWithPopup(provider)
+  //   .then((result:any) => {
+  //       console.log('You have been successfully logged in!')
+  //   }).catch((error:any) => {
+  //       console.log(error)
+  //   })
+  // }
 
 }

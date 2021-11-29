@@ -1,15 +1,31 @@
-<div class="NgxEditor__Wrapper">
-  <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-  <ngx-editor
-    [editor]="editor"
-    [ngModel]="html"
-    [disabled]="false"
-    [placeholder]="'Type here...'"
-  ></ngx-editor>
-</div>
+<div class="blog-post-wrapper">
+  <div class="container">
+    <button type="button" class="btn btn-primary" [routerLink]="['/login']">
+      Google Authentication
+    </button>
 
-<ul>
-  <li class="text" *ngFor="let article of articles | async">
-    {{ article | json }}
-  </li>
-</ul>
+    <div class="editor-wrapper">
+      <form [formGroup]="blogForm">
+        <!-- <h2>{{ this.blogForm.getRawValue() | json }}</h2> -->
+        <div class="form-group">
+          <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+          <ngx-editor
+            [height]="'300px'"
+            [editor]="editor"
+            [ngModel]="html"
+            [disabled]="false"
+            formControlName="content"
+            [placeholder]="'Type here...'"
+          ></ngx-editor>
+        </div>
+        <button class="btn btn-success" type="submit" (click)="onPost()">
+          Post
+        </button>
+      </form>
+    </div>
+
+    <button class="btn btn-primary" [routerLink]="['/blog/list']">
+      View All Blogs
+    </button>
+  </div>
+</div>

@@ -1,6 +1,14 @@
 <!-- Calling GoogleAuth() Api from AuthService -->
-<div class="formGroup">
-  <button type="button" (click)="authService.GoogleAuth()">
-    Sign in with google
-  </button>
+<div class="sign-in-wrapper">
+  <div class="container">
+    <div class="formGroup">
+      <button
+        class="btn btn-primary"
+        type="button"
+        (click)="authService.GoogleAuth()"
+      >
+        Sign in with google
+      </button>
+    </div>
+  </div>
 </div>
