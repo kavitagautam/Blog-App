@@ -1,1 +1,15 @@
-<p>blog-post works!</p>
+<div class="NgxEditor__Wrapper">
+  <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+  <ngx-editor
+    [editor]="editor"
+    [ngModel]="html"
+    [disabled]="false"
+    [placeholder]="'Type here...'"
+  ></ngx-editor>
+</div>
+
+<ul>
+  <li class="text" *ngFor="let article of articles | async">
+    {{ article | json }}
+  </li>
+</ul>
